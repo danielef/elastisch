@@ -29,6 +29,11 @@
                  "sonatype-snapshots" {:url "http://oss.sonatype.org/content/repositories/snapshots"
                                        :snapshots true
                                        :releases {:checksum :fail :update :always}}}
+  :deploy-repositories [["interware-3rdparty"
+                         {:url "https://ci.interware.mx/nexus/repository/interware-3rdparty"
+                          :username :env/iw_username
+                          :password :env/iw_password}]]
+  :certificates ["./ci.interware.mx.pem"]
   :global-vars {*warn-on-reflection* true}
   :test-selectors {:focus       :focus
                    :indexing    :indexing
